@@ -3,6 +3,7 @@ import { create } from 'zustand'
 import { login, register } from '../api/auth'
 import { toast } from 'react-toastify';
 import {createJSONStorage, persist} from 'zustand/middleware'
+import {listLandmarks} from "../api/admin"
 
 const useAuthStore = create(persist((set) => ({
   user : null,
@@ -43,7 +44,18 @@ const useAuthStore = create(persist((set) => ({
         user : null ,
         token : null
     })
-  }
+  },
+
+  actionGetLandmarks : async () => {
+    try {
+      const resp = await listLandmarks()
+      console.log(resp)
+    } catch (err) {
+      console.log(err)
+    }
+  } 
+
+
 
 
 }),{

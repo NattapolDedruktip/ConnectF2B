@@ -34,6 +34,14 @@ function AdminSidebar() {
         Manage User
       </Link>
 
+
+      <Link className={classLink} to="/admin/map">
+        <span className="text-xl">
+          <MdManageAccounts />
+        </span>
+        Map
+      </Link>
+
       {/* <Link className={classLink} to="/admin/landmark">
         <span className="text-xl">
           <FaMapMarkedAlt />

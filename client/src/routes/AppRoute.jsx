@@ -13,6 +13,9 @@ import HomeUser from '../pages/user/HomeUser'
 import Unauthorization from "../pages/Unauthorization"
 import PageNotFound from "../pages/PageNotFound"
 import ProtectRoute from './ProtectRoute'
+import MapContent from '../pages/admin/MapContent.JsX'
+
+
 
 
 const router = createBrowserRouter([
@@ -34,7 +37,9 @@ const router = createBrowserRouter([
         element:  <ProtectRoute element={<AdminLayout  />}  allow={["ADMIN"]} />           ,
         children: [
             { index: true, element: <Dashboard /> },
-            { path: "manage", element: <Manage /> }
+            { path: "manage", element: <Manage /> },
+            { path: "map", element: <MapContent /> },
+            
         ],
     },
 

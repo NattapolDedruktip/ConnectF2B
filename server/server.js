@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const cors = require("cors")
 const authRouter = require("./routes/auth-route")
 const memberRouter = require("./routes/member-route")
+const LandmarkRouter = require("./routes/landmark-route")
 const notFoundHandler = require("./middlewares/notFound")
 const hdlError = require("./middlewares/error")
 
@@ -20,8 +21,11 @@ app.use(cors())
 app.use("/api",authRouter)
 app.use("/api",memberRouter)
 
+app.use("/api",LandmarkRouter)
+
 app.use(hdlError)
 app.use("*",notFoundHandler)
+
 
 
 //step 2 start server

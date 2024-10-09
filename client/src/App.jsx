@@ -7,15 +7,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
 
-  useEffect(()=>{
-    
+  useEffect(() => {
+
     getData()
 
-  },[])
-  
-  const getData = async() => {
+  }, [])
+
+  const getData = async () => {
     try {
-      
+
       const resp = await axios.get("http://localhost:5000/api/member")
       console.log(resp)
 
@@ -26,8 +26,20 @@ export const App = () => {
 
   return (
     <div>
-      <ToastContainer/>
-      <AppRoute/>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+
+      />
+      <AppRoute />
     </div>
   )
 }

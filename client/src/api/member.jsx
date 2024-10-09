@@ -11,3 +11,11 @@ export const removeMember = (token,id) => {
         }
     })
 }
+
+export const updateMember = (token, id , form) => {
+    return axios.patch("http://localhost:5000/api/member/"+id, form ,{
+        headers:{
+            Authorization: `Bearer ${token}`
+        }
+    })
+}
